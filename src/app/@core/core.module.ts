@@ -14,20 +14,23 @@ import {translateBrowserLoaderFactory} from '@core/utils/translate-browser.loade
 import {routes} from '@app/routes';
 import {LocalizeParser, LocalizeRouterModule, LocalizeRouterSettings,} from '@gilsdav/ngx-translate-router';
 import {localizeBrowserLoaderFactory} from '@core/utils/localize-browser.loader';
-import {AuthInterceptorProvider} from './http/interceptors/auth.interceptor';
-import {FakeBackendProvider} from './http/interceptors/fake-backend.interceptor';
 import {MainLayoutComponent} from './@components/layouts/main-layout/main-layout.component';
 import {MainHeaderComponent} from './@components/layouts/main-header/main-header.component';
 import {RouterModule} from "@angular/router";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
+import {LoginPopupComponent} from './@components/login-popup/login-popup.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MaterialModule} from "@shared/material/material.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     MainLayoutComponent,
-    MainHeaderComponent
+    MainHeaderComponent,
+    LoginPopupComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -70,14 +73,17 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
   exports: [
     MainLayoutComponent
   ],
   providers: [
-    AuthInterceptorProvider,
-    FakeBackendProvider,
+    // AuthInterceptorProvider,
+    // FakeBackendProvider,
     DatePipe,
     {provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks},
   ],

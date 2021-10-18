@@ -9,5 +9,14 @@
     "cart": "Cart",
     "sign_in": "Sign In",
     "search__placeholder": "What are you looking for?"
+  },
+  "login_title": "Welcome back!",
+  "login_desc": "Sign in to your account",
+  "form": {
+    "email_label": "Enter your email",
+    "email_required": "Email is Required",
+    "password_label": "Enter your password",
+    "password_required": "Password is Required",
+    "login": "Login"
   }
 }

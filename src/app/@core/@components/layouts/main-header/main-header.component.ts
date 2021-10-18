@@ -4,6 +4,7 @@ import {NavigationEnd, Router} from "@angular/router";
 import {DOCUMENT} from "@angular/common";
 import {MatDialog} from "@angular/material/dialog";
 import {LocalizeRouterService} from "@gilsdav/ngx-translate-router";
+import {LoginPopupComponent} from "@core/@components/login-popup/login-popup.component";
 
 @Component({
   selector: 'app-main-header',
@@ -45,7 +46,7 @@ export class MainHeaderComponent implements OnInit {
     });
   }
 
-  setLanguage() {
+  setLanguage(): void {
     if (this.localizeRouterService.parser.currentLang == "en") {
       this.lang = {key: "ar", value: "العربية"};
     } else {
@@ -53,7 +54,7 @@ export class MainHeaderComponent implements OnInit {
     }
   }
 
-  setHeaderStyle() {
+  setHeaderStyle(): void {
     fromEvent(document, "scroll").subscribe((res) => {
       this.CheckIfInHomePage();
     });
@@ -78,10 +79,11 @@ export class MainHeaderComponent implements OnInit {
     }
   }
 
-  loginSignupTrigger() {
+  login(): void {
+    this.dialog.open(LoginPopupComponent, {});
   }
 
-  logOut() {
+  logOut(): void {
 
   }
 

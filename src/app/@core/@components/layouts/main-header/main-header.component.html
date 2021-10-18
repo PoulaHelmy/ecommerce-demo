@@ -19,11 +19,11 @@
       </li>
       <li class="li__divider"></li>
       <li class="action__buttons">
-        <a class="action__btn">
+        <button (click)="login()" class="action__btn">
           <span>{{'header.sign_in'|translate}}</span>
           <img [class.translate__images]="currentUrl === 'ar'" alt="sign in"
                src="https://z.nooncdn.com/s/app/com/noon/icons/user_thin.svg">
-        </a>
+        </button>
       </li>
       <li class="li__divider"></li>
       <li class="action__buttons">

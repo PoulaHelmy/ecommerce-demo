@@ -38,14 +38,14 @@
 
 .main__title {
   font-size: $fs-32;
-  color: $primaryDarkColor;
+  color: $primaryColor;
   text-align: center;
   margin-bottom: 1.2em;
 }
 
 .semi__title {
   font-size: $fs-24;
-  color: $primaryDarkColor;
+  color: $primaryColor;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -118,7 +118,7 @@
 
   &.raised__button {
     background: $color-white;
-    color: $primaryDarkColor;
+    color: $primaryColor;
     border: 2px $color-white solid;
   }
 

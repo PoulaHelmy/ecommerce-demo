@@ -1,0 +1,49 @@
+<div class="login__container">
+  <div class="title">
+    <button mat-dialog-close="">
+      <svg fill="#000000" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h24v24H0V0z" fill="none"/>
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+      </svg>
+    </button>
+    <div class="login__title">{{'login_title'|translate}}</div>
+    <div class="login__desc">{{'login_desc'|translate}}</div>
+  </div>
+  <div class="body">
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="form__wrapper">
+      <div class="row">
+        <div class="col-12">
+          <div class="input__wrapper">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>{{'form.email_label'|translate}}</mat-label>
+              <input formControlName="email" matInput placeholder="pat@example.com" required>
+              <mat-error
+                *ngIf="loginForm.controls.email.errors?.required &&loginForm.controls.email.touched">{{'form.email_required'|translate}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="input__wrapper">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>{{'form.password_label'|translate}}</mat-label>
+              <input [type]="hide ? 'password' : 'text'" formControlName="password" matInput>
+              <button (click)="hide = !hide"
+                      [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide" mat-icon-button
+                      matSuffix
+                      type="button">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error
+                *ngIf="loginForm.controls.password.errors?.required &&loginForm.controls.password.touched">{{'form.password_required'|translate}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <button (click)="onSubmit()" class="submit__btn">{{'form.login'|translate}}</button>
+  </div>
+</div>

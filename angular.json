@@ -48,7 +48,7 @@
                 "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "inject": false
               },
-              "src/styles.scss"
+              "src/assets/styles/styles.scss"
             ],
             "scripts": [],
             "serviceWorker": true,
@@ -118,7 +118,9 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -165,7 +167,9 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "routes": ["/"]
+            "routes": [
+              "/"
+            ]
           },
           "configurations": {
             "production": {

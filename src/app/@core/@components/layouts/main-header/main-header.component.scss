@@ -82,6 +82,8 @@
     font-size: 16px;
     color: $color-black;
     transition: all 0.2s ease-in-out;
+    border: 0;
+    background: transparent;
 
     a {
       &:hover {
