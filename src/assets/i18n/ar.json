@@ -1,0 +1,13 @@
+{
+  "DIR": "rtl",
+  "HOMEPAGE": "الصفحة الرئيسية",
+  "FEATURE": "ميزة",
+  "HOMEPAGE_WORKS": "الصفحة الرئيسية تشتغل",
+  "FEATURE_WORKS": "الميزة تشتغل",
+  "CHANGE_LANGUAGE": "غير اللغة",
+  "header": {
+    "cart": "عربة التسوق",
+    "sign_in": "تسجيل الدخول",
+    "search__placeholder": "ما الذى تبحث عنه؟"
+  }
+}

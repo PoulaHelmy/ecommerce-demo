@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {routes} from "@app/routes";
 
-const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+    initialNavigation: 'disabled'
+  })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

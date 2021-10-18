@@ -1,0 +1,41 @@
+<header class="app__header" id="navigationContainer">
+  <h1 [routerLink]="'/' | localize" class="logo">
+    Ecommerce <span>2021</span>
+  </h1>
+  <div class="spacer"></div>
+  <div class="search__header">
+    <div class="search__content">
+      <input class="input__search" placeholder="{{'header.search__placeholder'|translate}}" type="search">
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="nav__container">
+    <ul class="nav__elements">
+      <li class="action__buttons">
+        <a class="action__btn" queryParamsHandling="merge" routerLink="/{{ lang.key }}/{{ currentUrl }}"
+           routerLinkActive="active">
+          <span>{{ lang.value }}</span>
+        </a>
+      </li>
+      <li class="li__divider"></li>
+      <li class="action__buttons">
+        <a class="action__btn">
+          <span>{{'header.sign_in'|translate}}</span>
+          <img [class.translate__images]="currentUrl === 'ar'" alt="sign in"
+               src="https://z.nooncdn.com/s/app/com/noon/icons/user_thin.svg">
+        </a>
+      </li>
+      <li class="li__divider"></li>
+      <li class="action__buttons">
+        <a class="action__btn">
+          <span>{{'header.cart'|translate}}</span>
+          <img [class.translate__images]="currentUrl === 'ar'" alt="shopping cart"
+               src="https://z.nooncdn.com/s/app/com/noon/icons/cart.svg">
+        </a>
+      </li>
+    </ul>
+  </div>
+  <button (click)="toggleSideBar()" class="toggle__btn" color="primary" mat-mini-fab>
+    <mat-icon>menu</mat-icon>
+  </button>
+</header>
