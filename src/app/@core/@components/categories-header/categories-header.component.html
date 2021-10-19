@@ -3,12 +3,25 @@
     <div class="title">
       <span>All Categories</span>
     </div>
-    <ng-container *ngFor="let category of AllCategories">
-      <div class="category">
-        <a [routerLink]="['/categories',category]" class="link">
-          <span class="cat__content">{{category}}</span>
-        </a>
-      </div>
-    </ng-container>
+    <div class="category">
+      <a [queryParams]="{'electronics':true}" [routerLink]="['/all-products' | localize]" class="link">
+        <span class="cat__content">Electronics</span>
+      </a>
+    </div>
+    <div class="category">
+      <a [queryParams]="{'jewelery':true}" [routerLink]="['/all-products' | localize]" class="link">
+        <span class="cat__content">Jewelery</span>
+      </a>
+    </div>
+    <div class="category">
+      <a [queryParams]="{'men__clothing':true}" [routerLink]="['/all-products' | localize]" class="link">
+        <span class="cat__content">Men's Clothing</span>
+      </a>
+    </div>
+    <div class="category">
+      <a [queryParams]="{'women__clothing':true}" [routerLink]="['/all-products' | localize]" class="link">
+        <span class="cat__content">Women's Clothing</span>
+      </a>
+    </div>
   </div>
 </div>

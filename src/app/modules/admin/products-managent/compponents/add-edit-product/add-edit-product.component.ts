@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-add-edit-product',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) date: {},
+    private dialogRef: MatDialogRef<AddEditProductComponent>
+  ) {
+  }
 
   ngOnInit(): void {
   }

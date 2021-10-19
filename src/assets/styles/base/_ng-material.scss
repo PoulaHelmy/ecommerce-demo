@@ -22,11 +22,11 @@ input.mat-input-element {
 }
 
 .mat-icon.mat-accent {
-  color: $primaryColor !important;
+  color: $selectedColor !important;
 }
 
 .mat-icon.mat-primary {
-  color: $primaryColor !important;
+  color: $selectedColor !important;
 }
 
 .mat-drawer-content {
@@ -47,7 +47,7 @@ input.mat-input-element {
 
 //mat-input focused color
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-  color: $primaryColor !important;
+  color: $selectedColor !important;
 }
 
 // mat-input error outline color
@@ -84,6 +84,10 @@ input.mat-input-element {
 
 .mat-select-value {
   color: $secColor !important;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: $secColor !important;
 }
 
 /*** To change the arrow color ****/

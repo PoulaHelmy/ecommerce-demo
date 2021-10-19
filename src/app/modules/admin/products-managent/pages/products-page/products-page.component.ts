@@ -4,6 +4,8 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {ProductModel} from "@core/data/interface/product.model";
 import {ProductsService} from "@core/http/services/products.service";
+import {MatDialog} from "@angular/material/dialog";
+import {AddEditProductComponent} from "@app/modules/admin/products-managent/compponents/add-edit-product/add-edit-product.component";
 
 @Component({
   selector: 'app-products-page',
@@ -16,7 +18,8 @@ export class ProductsPageComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService, private dialog: MatDialog,
+  ) {
   }
 
   ngAfterViewInit() {
@@ -35,5 +38,19 @@ export class ProductsPageComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  OpenDialog(isEdit: boolean = false, id: number = 0): void {
+    console.log('OpenDialog');
+    this.dialog.open(AddEditProductComponent, {
+      data: {
+        isEdit,
+        id
+      }
+    })
+  }
+
+  DeleteItem(id: number): void {
+    console.log('DeleteItem');
   }
 }
