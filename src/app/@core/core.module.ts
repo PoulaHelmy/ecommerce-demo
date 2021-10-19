@@ -76,7 +76,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     MatDialogModule,
     MatFormFieldModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     MainLayoutComponent

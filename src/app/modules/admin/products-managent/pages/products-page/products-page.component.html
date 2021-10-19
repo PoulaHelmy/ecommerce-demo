@@ -1,0 +1,89 @@
+<div class="page__container container">
+  <div class="row">
+    <div class="col-12">
+      <div class="page__actions">
+
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="page__content">
+        <div class="filter">
+          <mat-form-field>
+            <mat-label>Filter</mat-label>
+            <input #input (keyup)="applyFilter($event)" matInput placeholder="Filter"/>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="table__container">
+        <ng-template
+          [ngTemplateOutletContext]="{data:dataSource}"
+          [ngTemplateOutlet]="tableTemplate">
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #tableTemplate let-data='data'>
+  <div class="table__wrapper">
+    <table [dataSource]="data" mat-table matSort>
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>ID.</th>
+        <td *matCellDef="let row" mat-cell>{{ row.id }}</td>
+      </ng-container>
+      <ng-container matColumnDef="image">
+        <th *matHeaderCellDef mat-header-cell>Image</th>
+        <td *matCellDef="let row" mat-cell>
+          <img [lazyLoad]="row.image" alt="" height="100px" width="75px">
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Category</th>
+        <td *matCellDef="let row" mat-cell><a
+          [routerLink]="['/admin/category-management'|localize]">{{row.category}}</a></td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Description</th>
+        <td *matCellDef="let row" mat-cell>{{row.description}}</td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Price</th>
+        <td *matCellDef="let row" mat-cell>
+          {{ row.price }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="rates">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Rating</th>
+        <td *matCellDef="let row" mat-cell>
+          {{ row.rating.rate / row.rating.count }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Actions</th>
+        <td *matCellDef="let row" mat-cell>
+          <button color="accent" mat-raised-button>edit</button>
+          <button color="warn" mat-raised-button>delete</button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>Title</th>
+        <td *matCellDef="let row" mat-cell>{{ row.title }}</td>
+      </ng-container>
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
+      <tr *matNoDataRow class="mat-row">
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20,50,100]"
+      [pageSize]="5"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</ng-template>

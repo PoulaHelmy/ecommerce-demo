@@ -1,22 +1,21 @@
 import {NgModule} from '@angular/core';
-import {components, directives, imports, pipes} from "@shared/index";
 import {CookieService} from "ngx-cookie-service";
-
+import * as Shared from './index';
 
 @NgModule({
   declarations: [
-    ...pipes,
-    ...components,
-    ...directives
+    ...Shared.pipes,
+    ...Shared.components,
+    ...Shared.directives
   ],
   imports: [
-    ...imports
+    ...Shared.imports
   ],
   exports: [
-    ...imports,
-    ...pipes,
-    ...components,
-    ...directives
+    ...Shared.imports,
+    ...Shared.pipes,
+    ...Shared.components,
+    ...Shared.directives
   ],
   providers: [CookieService]
 })

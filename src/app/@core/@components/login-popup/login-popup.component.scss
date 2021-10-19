@@ -1,11 +1,34 @@
 @import "src/assets/styles/abstracts/variables";
 
-.title {
-
+::ng-deep.mat-dialog-container {
+  @include flex(center, center, column);
+  -webkit-box-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  background-image: url(https://z.nooncdn.com/s/app/com/noon/images/noon-logo-bg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 500px;
+  min-height: 475px;
 }
 
-.body {
+.login__container {
+  @include flex(center, space-between, column);
+  width: 100%;
+  height: 425px;
+  position: relative;
+}
 
+
+.body {
+  .form__wrapper {
+    .input__wrapper {
+      margin-block: 1rem;
+    }
+  }
 }
 
 .footer {
@@ -19,10 +42,33 @@
   flex: 1 1 0;
   text-align: center;
   font-size: 1.25rem;
-  color: rgb(56, 102, 223);
+  color: $secColor;
   font-weight: 600;
   padding: 18px 0;
   text-transform: uppercase;
   border: 0;
   background: transparent;
+}
+
+
+.close__button {
+  border: 0;
+  background: transparent;
+  position: absolute;
+  top: -24px;
+  right: -12px;
+}
+
+.login__title {
+  font-size: $fs-29;
+  text-align: center;
+  color: $fontColor;
+  margin-block: 0.8rem;
+}
+
+.login__desc {
+  font-size: $fs-29;
+  text-align: center;
+  font-weight: $fw-bold;
+  color: $fontColor
 }

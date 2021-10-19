@@ -1,15 +1,12 @@
 @import "../abstracts/variables";
 
-.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {
-  font-family: $font-family-arabic, Fallback, sans-serif;
-}
 
 input.mat-input-element {
-  color: $primaryColor !important;
+  color: $secColor !important;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-  color: $primaryColor !important;
+  color: $secColor !important;
 }
 
 .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
