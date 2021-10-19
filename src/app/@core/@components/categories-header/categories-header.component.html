@@ -1,0 +1,14 @@
+<div class="categories__container container-fluid">
+  <div class="content">
+    <div class="title">
+      <span>All Categories</span>
+    </div>
+    <ng-container *ngFor="let category of AllCategories">
+      <div class="category">
+        <a [routerLink]="['/categories',category]" class="link">
+          <span class="cat__content">{{category}}</span>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</div>

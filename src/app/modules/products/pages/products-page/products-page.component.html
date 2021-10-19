@@ -1,0 +1,81 @@
+<div class="page__container">
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <div class="filter__card">
+        <div class="card__body">
+          <!--          <form (ngSubmit)="LoadData()" [formGroup]="filterForm">-->
+          <!--            <div class="group__container mb-0 mt-2">-->
+          <!--              <section class="group__body">-->
+          <!--                <label class="group__title">name</label>-->
+          <!--                <mat-form-field appearance="outline" class="w-100">-->
+          <!--                  <input formControlName="name" matInput placeholder="Ex. headphone..." type="text"/>-->
+          <!--                </mat-form-field>-->
+          <!--              </section>-->
+          <!--            </div>-->
+          <!--            <div class="group__container">-->
+          <!--              <label class="group__title">Price</label>-->
+          <!--              <section class="group__body">-->
+          <!--                <mat-slider-->
+          <!--                  [(ngModel)]="value"-->
+          <!--                  [invert]="invert"-->
+          <!--                  [max]="max"-->
+          <!--                  [min]="min"-->
+          <!--                  [step]="step"-->
+          <!--                  [thumbLabel]="thumbLabel"-->
+          <!--                  [tickInterval]="getSliderTickInterval()"-->
+          <!--                  [vertical]="vertical"-->
+          <!--                  aria-labelledby="example-name-label"-->
+          <!--                  class="example-margin">-->
+          <!--                </mat-slider>-->
+          <!--              </section>-->
+          <!--            </div>-->
+          <!--            <div class="group__container">-->
+          <!--              <label class="group__title">النوع</label>-->
+          <!--              <section class="group__body">-->
+          <!--                <mat-checkbox class="group__content" color="primary" formControlName="male">ذكر</mat-checkbox>-->
+          <!--                <mat-checkbox class="group__content" color="primary" formControlName="female">أنثى</mat-checkbox>-->
+          <!--              </section>-->
+          <!--            </div>-->
+          <!--            <div class="group__container">-->
+          <!--              <label class="group__title">اللغات</label>-->
+          <!--              <section class="group__body">-->
+          <!--                <mat-checkbox class="group__content" color="primary" formControlName="english">الإنجليزية-->
+          <!--                </mat-checkbox>-->
+          <!--                <mat-checkbox class="group__content" color="primary" formControlName="arabic">العربية</mat-checkbox>-->
+          <!--              </section>-->
+          <!--            </div>-->
+          <!--            <div class="group__container">-->
+          <!--              <label class="group__title">الاطفال</label>-->
+          <!--              <section class="group__body">-->
+          <!--                <mat-checkbox class="group__content" color="primary" formControlName="canTeachChildren">أطفال-->
+          <!--                </mat-checkbox>-->
+          <!--              </section>-->
+          <!--            </div>-->
+          <!--            <div class="group__container">-->
+          <!--              <button class="button" type="submit">بحث</button>-->
+          <!--              <button (click)="ResetForm()" class="reset__button" type="button">مسح البحث</button>-->
+          <!--            </div>-->
+          <!--          </form>-->
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-9">
+      <div class="products__container">
+        <div *ngIf="loading" class="row">
+          <ng-container *ngFor="let product of [0,1,2,3,4,5,6,7,8,9,10,11]">
+            <div class="col-12 col-md-3">
+              <app-content-skeleton [type]="'product'"></app-content-skeleton>
+            </div>
+          </ng-container>
+        </div>
+        <div *ngIf="!loading" class="row">
+          <ng-container *ngFor="let product of AllProducts">
+            <div class="col-12 col-md-3 my-3">
+              <app-product-card [product]="product"></app-product-card>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,8 @@ import {TranslateModule} from '@ngx-translate/core';
 import {TruncateTextPipe} from './pipes/truncate-text.pipe';
 import {MaterialModule} from "@shared/material/material.module";
 import {LazyLoadImageModule} from "ng-lazyload-image";
+import {ContentLoaderModule} from "@ngneat/content-loader";
+import {ContentSkeletonComponent} from "@shared/components/content-skeleton/content-skeleton.component";
 
 /*----------------------   Imports   ----------------------*/
 export const imports: any[] = [
@@ -23,7 +25,8 @@ export const imports: any[] = [
   FormsModule,
   ReactiveFormsModule,
   MaterialModule,
-  LazyLoadImageModule
+  LazyLoadImageModule,
+  ContentLoaderModule,
 ];
 /*----------------------   PIPES   ----------------------*/
 export const pipes: any[] = [
@@ -43,4 +46,7 @@ export const directives: any[] = [
   ShowAuthedDirective,
 ];
 /*----------------------   Components   ----------------------*/
-export const components: any[] = [];
+export const components: any[] = [
+  ContentSkeletonComponent
+
+];

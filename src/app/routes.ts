@@ -13,13 +13,19 @@ export const AdminRoutes: Routes = [
     path: 'admin/category-management',
     loadChildren: () => import('./modules/admin/category-managent/category-management.module').then(m => m.CategoryManagementModule)
   },
-]
+];
+
 export const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
       import('./modules/home/home.module').then((m) => m.HomeModule),
     pathMatch: 'full'
+  },
+  {
+    path: 'all-products',
+    loadChildren: () =>
+      import('./modules/products/products.module').then((m) => m.ProductsModule),
   },
   ...AdminRoutes,
   // {

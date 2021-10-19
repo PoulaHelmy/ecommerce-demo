@@ -58,12 +58,12 @@ input.mat-input-element {
 
 // mat-input carent color
 .mat-input-element {
-  caret-color: $primaryColor !important;
+  caret-color: $secColor !important;
 }
 
 // mat-input error carent color
 .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
-  caret-color: $primaryColor !important;
+  caret-color: $secColor !important;
 }
 
 .mat-form-field-appearance-fill .mat-form-field-flex {
@@ -143,13 +143,13 @@ input.mat-input-element {
 }
 
 mat-datepicker-toggle {
-  color: $primaryColor !important;
+  color: $secColor !important;
 }
 
 
 button.mat-focus-indicator.mat-calendar-next-button.mat-icon-button.mat-button-base,
 button.mat-focus-indicator.mat-calendar-previous-button.mat-icon-button.mat-button-base {
-  color: $primaryColor !important;
+  color: $secColor !important;
 }
 
 .mat-calendar-body-selected {

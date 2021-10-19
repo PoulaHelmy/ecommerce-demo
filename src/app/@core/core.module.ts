@@ -24,13 +24,15 @@ import {LoginPopupComponent} from './@components/login-popup/login-popup.compone
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MaterialModule} from "@shared/material/material.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import { CategoriesHeaderComponent } from './@components/categories-header/categories-header.component';
 
 
 @NgModule({
   declarations: [
     MainLayoutComponent,
     MainHeaderComponent,
-    LoginPopupComponent
+    LoginPopupComponent,
+    CategoriesHeaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

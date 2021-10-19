@@ -6,7 +6,7 @@ import * as Shared from './index';
   declarations: [
     ...Shared.pipes,
     ...Shared.components,
-    ...Shared.directives
+    ...Shared.directives,
   ],
   imports: [
     ...Shared.imports
