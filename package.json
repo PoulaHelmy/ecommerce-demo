@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --buildOptimizer=true --optimization=true",
+    "build": "npm run gh-deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run ecommerce:serve-ssr",
     "serve:ssr": "node dist/ecommerce/server/main.js",
     "build:ssr": "ng build && ng run ecommerce:server",
-    "prerender": "ng run ecommerce:prerender"
+    "prerender": "ng run ecommerce:prerender",
+    "gh-deploy": "ng build --buildOptimizer=true --optimization=true --baseHref='https://poulahelmy.github.io/ecommerce-demo/'"
   },
   "private": true,
   "dependencies": {
