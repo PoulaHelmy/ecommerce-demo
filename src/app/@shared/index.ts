@@ -20,6 +20,7 @@ import {RouterModule} from "@angular/router";
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {RoleDirective} from "@shared/directives/Structural-Directives/role.directive";
 import {NotRoleDirective} from "@shared/directives/Structural-Directives/not-role.directive";
+import {ScrollToTopComponent} from "@shared/components/scroll-to-top/scroll-to-top.component";
 
 /*----------------------   Imports   ----------------------*/
 export const imports: any[] = [
@@ -55,5 +56,6 @@ export const components: any[] = [
   ContentSkeletonComponent,
   AppLoaderComponent,
   DialogueComponent,
-  NotFoundComponent
+  NotFoundComponent,
+  ScrollToTopComponent,
 ];
