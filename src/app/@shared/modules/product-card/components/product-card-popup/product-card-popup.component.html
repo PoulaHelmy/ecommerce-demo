@@ -7,6 +7,7 @@
     <p class="product__title">{{product.title}}</p>
     <p class="product__price">{{product.price }}</p>
     <p class="product__category">{{product.category}}</p>
+    <p class="product__description">{{product.description}}</p>
     <div class="footer">
       <div class="rating">
         <span class="star">
@@ -17,6 +18,19 @@
         </span>
         <span class="rate">{{product.rating.rate}}</span>
         <span class="counter">({{product.rating.count}})</span>
+      </div>
+    </div>
+    <div class="actions__container">
+      <div class="left">
+        <button class="button" mat-dialog-close>close</button>
+      </div>
+      <div class="right">
+        <div *appShowAuthed="false">
+          <button (click)="login()" class="button raised__button-special">Add to Cart</button>
+        </div>
+        <div *appShowAuthed="true">
+          <button (click)="addToCart()" class="button raised__button-special">Add to Cart</button>
+        </div>
       </div>
     </div>
   </div>

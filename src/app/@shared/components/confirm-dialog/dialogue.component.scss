@@ -51,15 +51,4 @@
   background-color: $color-white;
 }
 
-.session__content {
-  @include flex(center, space-between, row, wrap);
-  border: 1px dotted $color-gray-5;
-  border-radius: $rd-12;
-  padding: 0.5rem 0.6rem;
-  margin: 1rem auto;
-
-  @include media-breakpoint-down(md) {
-    @include flex(center, center, row, wrap);
-  }
-}
 

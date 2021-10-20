@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core';
 import {ProductModel} from "@core/data/interface/product.model";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {LoginPopupComponent} from "@shared/components/login-popup/login-popup.component";
 
 @Component({
   selector: 'app-product-card-popup',
@@ -13,6 +14,7 @@ export class ProductCardPopupComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { data: ProductModel },
+    private dialog: MatDialog,
     private dialogRef: MatDialogRef<ProductCardPopupComponent>) {
   }
 
@@ -20,4 +22,11 @@ export class ProductCardPopupComponent implements OnInit {
     this.product = this.data.data;
   }
 
+  login(): void {
+    this.dialog.open(LoginPopupComponent, {});
+  }
+
+  addToCart(): void {
+
+  }
 }

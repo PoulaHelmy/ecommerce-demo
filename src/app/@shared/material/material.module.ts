@@ -34,7 +34,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatRadioModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
 })
 export class MaterialModule {

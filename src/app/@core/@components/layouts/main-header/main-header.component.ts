@@ -4,8 +4,8 @@ import {NavigationEnd, Router} from "@angular/router";
 import {DOCUMENT} from "@angular/common";
 import {MatDialog} from "@angular/material/dialog";
 import {LocalizeRouterService} from "@gilsdav/ngx-translate-router";
-import {LoginPopupComponent} from "@core/@components/login-popup/login-popup.component";
 import {AuthService} from "@core/http/services/auth.service";
+import {LoginPopupComponent} from "@shared/components/login-popup/login-popup.component";
 
 @Component({
   selector: 'app-main-header',

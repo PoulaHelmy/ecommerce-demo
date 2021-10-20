@@ -1,17 +1,19 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {ProductCardComponent} from './product-card.component';
+import {SharedModule} from "@shared/shared.module";
+import {ProductCardPopupComponent} from "@shared/modules/product-card/components/product-card-popup/product-card-popup.component";
 
 
 @NgModule({
   declarations: [
-    ProductCardComponent
+    ProductCardComponent,
+    ProductCardPopupComponent
   ],
   exports: [
     ProductCardComponent
   ],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class ProductCardModule {

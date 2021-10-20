@@ -21,6 +21,7 @@ import {CarouselModule} from "ngx-owl-carousel-o";
 import {RoleDirective} from "@shared/directives/Structural-Directives/role.directive";
 import {NotRoleDirective} from "@shared/directives/Structural-Directives/not-role.directive";
 import {ScrollToTopComponent} from "@shared/components/scroll-to-top/scroll-to-top.component";
+import {LoginPopupComponent} from "@shared/components/login-popup/login-popup.component";
 
 /*----------------------   Imports   ----------------------*/
 export const imports: any[] = [
@@ -58,4 +59,5 @@ export const components: any[] = [
   DialogueComponent,
   NotFoundComponent,
   ScrollToTopComponent,
+  LoginPopupComponent,
 ];

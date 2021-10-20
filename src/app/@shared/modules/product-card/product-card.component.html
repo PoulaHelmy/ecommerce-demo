@@ -1,4 +1,4 @@
-<div (click)="openPopup()" class="product__card">
+<div class="product__card">
   <div class="card__container">
     <div class="title">
       <img [src]="product.image" alt="" class="card__image">
@@ -18,6 +18,16 @@
         <span class="rate">{{product.rating.rate}}</span>
         <span class="counter">({{product.rating.count}})</span>
       </div>
+    </div>
+  </div>
+  <div class="overlay">
+    <div class="overlay__title">
+
+    </div>
+    <div class="overlay__body">
+      <button (click)="login()" *appShowAuthed="false">Add to Cart</button>
+      <button (click)="addToCart()" *appShowAuthed="true">Add to Cart</button>
+      <button (click)="openPopup()">Show Details</button>
     </div>
   </div>
 </div>

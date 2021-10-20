@@ -20,7 +20,6 @@ import {RouterModule} from "@angular/router";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
-import {LoginPopupComponent} from './@components/login-popup/login-popup.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MaterialModule} from "@shared/material/material.module";
 import {ReactiveFormsModule} from "@angular/forms";
@@ -32,7 +31,6 @@ import {SharedModule} from "@shared/shared.module";
   declarations: [
     MainLayoutComponent,
     MainHeaderComponent,
-    LoginPopupComponent,
     CategoriesHeaderComponent
   ],
   imports: [
