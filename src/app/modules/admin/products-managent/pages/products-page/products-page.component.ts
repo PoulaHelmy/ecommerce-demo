@@ -50,16 +50,20 @@ export class ProductsPageComponent implements OnInit {
         id,
         item
       }
-    }).afterClosed().subscribe((res) => {
-      const index = this.dataSource.data.indexOf(item);
-      if (isEdit) {
-        this.dataSource.data[index] = res;
-        this.dataSource._updateChangeSubscription();
-        this.toasterService.showSuccess('Item Updated Successfully');
+    }).afterClosed().subscribe((res: { statue: boolean; data: ProductModel | null; }) => {
+      if (res.statue) {
+        const index = this.dataSource.data.indexOf(item);
+        if (isEdit) {
+          this.dataSource.data[index] = res.data;
+          this.dataSource._updateChangeSubscription();
+          this.toasterService.showSuccess('Item Updated Successfully');
+        } else {
+          this.dataSource.data.push(res.data);
+          this.dataSource._updateChangeSubscription();
+          this.toasterService.showSuccess('Item Created Successfully');
+        }
       } else {
-        this.dataSource.data.push(res);
-        this.dataSource._updateChangeSubscription();
-        this.toasterService.showSuccess('Item Created Successfully');
+        this.toasterService.showSuccess("something wrong please try again later.");
       }
     });
   }

@@ -63,7 +63,9 @@ export class AddEditProductComponent implements OnInit {
             return res;
           })
         );
-        this.dialogRef.close(res);
+        this.dialogRef.close({statue: true, data: res});
+      }, (error) => {
+        this.dialogRef.close({statue: false, data: null});
       })
     } else {
       this.productsService.addNewProduct(this.ItemForm.value).subscribe((res) => {
@@ -74,7 +76,9 @@ export class AddEditProductComponent implements OnInit {
             return res;
           })
         );
-        this.dialogRef.close(res);
+        this.dialogRef.close({statue: true, data: res});
+      }, (error) => {
+        this.dialogRef.close({statue: false, data: null});
       });
     }
   }

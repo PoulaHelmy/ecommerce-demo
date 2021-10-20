@@ -14,8 +14,9 @@
   "login_desc": "Sign in to your account",
   "logout": "Logout",
   "products": "Products",
+  "all_categories": "All Categories",
   "form": {
-    "username__label": "Enter your username",
+    "username_label": "Enter your username",
     "username_required": "Username is Required",
     "password_label": "Enter your password",
     "password_required": "Password is Required",

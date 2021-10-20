@@ -29,7 +29,6 @@ export class AuthService {
     if (this.GetValue(this.TOKEN_NAME)) {
       const user: SimpleUser = JSON.parse(this.GetValue('user') as string);
       this.SetUserDate(user);
-      this.router.navigate(['/']).then();
     }
   }
 

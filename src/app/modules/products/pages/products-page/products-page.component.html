@@ -16,14 +16,12 @@
               <label class="group__title">Price</label>
               <section class="group__body">
                 <mat-slider
-                  [(ngModel)]="price"
                   [max]="max"
                   [min]="min"
                   [step]="step"
                   [thumbLabel]="thumbLabel"
                   [vertical]="vertical"
-                  aria-labelledby="example-name-label"
-                  class="example-margin"
+                  class="example-margin w-100"
                   color="primary"
                   formControlName="price">
                 </mat-slider>
@@ -33,14 +31,12 @@
               <label class="group__title">Rate</label>
               <section class="group__body">
                 <mat-slider
-                  [(ngModel)]="rate"
                   [max]="maxRate"
                   [min]="minRate"
                   [step]="step"
                   [thumbLabel]="thumbLabel"
                   [vertical]="vertical"
-                  aria-labelledby="example-name-label"
-                  class="example-margin"
+                  class="example-margin w-100"
                   color="primary"
                   formControlName="rate">
                 </mat-slider>
@@ -49,14 +45,14 @@
             <div class="group__container">
               <label class="group__title">Category</label>
               <section class="group__body">
-                <mat-checkbox class="group__content" color="primary" formControlName="women__clothing"
-                >women's clothing
+                <mat-checkbox class="group__content" color="primary" formControlName="women__clothing">
+                  women's clothing
                 </mat-checkbox>
-                <mat-checkbox class="group__content" color="primary" formControlName="men__clothing"
-                >
+                <mat-checkbox class="group__content" color="primary" formControlName="men__clothing">
                   men's clothing
                 </mat-checkbox>
-                <mat-checkbox class="group__content" color="primary" formControlName="jewelery">jewelery
+                <mat-checkbox class="group__content" color="primary" formControlName="jewelery">
+                  jewelery
                 </mat-checkbox>
                 <mat-checkbox class="group__content" color="primary" formControlName="electronics">
                   electronics

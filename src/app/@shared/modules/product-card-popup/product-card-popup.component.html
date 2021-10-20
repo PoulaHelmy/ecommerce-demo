@@ -1,11 +1,11 @@
-<div (click)="openPopup()" class="product__card">
+<div class="product__card">
   <div class="card__container">
     <div class="title">
       <img [src]="product.image" alt="" class="card__image">
     </div>
     <p class="body">
     <p class="product__title">{{product.title}}</p>
-    <p class="product__price">{{product.price | currency:'EGP'}}</p>
+    <p class="product__price">{{product.price }}</p>
     <p class="product__category">{{product.category}}</p>
     <div class="footer">
       <div class="rating">

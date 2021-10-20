@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ProductsService} from "@core/http/services/products.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {Observable, of} from "rxjs";
-import {delay, startWith} from "rxjs/operators";
+import {of} from "rxjs";
+import {delay} from "rxjs/operators";
 import {DatePipe} from "@angular/common";
 import {BindQueryParamsFactory} from "@ngneat/bind-query-params";
 import {ProductModel} from "@core/data/interface/product.model";
@@ -18,9 +18,6 @@ interface Filters {
   rate: string;
 }
 
-function valueChanges(group: FormGroup): Observable<any> {
-  return group.valueChanges.pipe(startWith(group.value));
-}
 
 @Component({
   selector: 'app-products-page',
@@ -58,7 +55,6 @@ export class ProductsPageComponent implements OnInit, OnDestroy {
   price = 0;
   rate = 0;
   vertical = false;
-  tickInterval = 1;
   maxRate = 5;
   minRate = 1;
 
@@ -71,12 +67,7 @@ export class ProductsPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.LoadProducts();
-    valueChanges(this.filterForm).subscribe((v) => {
-      console.log('initialvalue', v);
-
-    });
     this.filterForm.valueChanges.subscribe((v) => {
-      console.log('group valueChanges', v);
       this.LoadData();
     });
   }

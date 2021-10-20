@@ -32,6 +32,8 @@
   text-align: center;
   transition: $transition-200ms;
   cursor: pointer;
+  padding: 0.6rem;
+  border-radius: $rd-16;
 
   &:hover {
     background-color: $secColor;
@@ -58,18 +60,6 @@
 
   @include media-breakpoint-down(md) {
     @include flex(center, center, row, wrap);
-    a {
-      width: 100%;
-      text-align: center;
-      word-break: break-all;
-    }
   }
 }
 
-.link {
-  transition: $transition-200ms;
-
-  &:hover {
-    color: $secDarkColor;
-  }
-}

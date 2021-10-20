@@ -10,12 +10,13 @@
     "sign_in": "تسجيل الدخول",
     "search__placeholder": "ما الذى تبحث عنه؟"
   },
+  "all_categories": "كل الاصناف",
   "login_title": "مرحبا بك!",
   "login_desc": "قم بتسجيل الدخول إلى حسابك",
   "logout": "تسجيل خروج",
   "products": "المنتجات",
   "form": {
-    "username__label": "قم إدخال اسم المستخدم",
+    "username_label": "قم إدخال اسم المستخدم",
     "username__required": "اسم المستخدم مطلوب",
     "password_label": "قم إدخال كلمة المرور",
     "password_required": "كلمة المرور مطلوبة",

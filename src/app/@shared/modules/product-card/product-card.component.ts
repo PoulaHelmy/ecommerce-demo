@@ -1,5 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {ProductModel} from "@core/data/interface/product.model";
+import {MatDialog} from "@angular/material/dialog";
+import {ProductCardPopupComponent} from "@shared/modules/product-card-popup/product-card-popup.component";
 
 @Component({
   selector: 'app-product-card',
@@ -10,7 +12,15 @@ import {ProductModel} from "@core/data/interface/product.model";
 export class ProductCardComponent implements OnInit {
   @Input() product!: ProductModel;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
+  }
+
+  openPopup(): void {
+    this.dialog.open(ProductCardPopupComponent, {
+      data: {
+        data: this.product
+      },
+    });
   }
 
   ngOnInit(): void {
