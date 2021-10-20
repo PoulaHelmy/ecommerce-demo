@@ -1,3 +1,5 @@
+@import "src/assets/styles/abstracts/variables";
+
 table {
   width: 100%;
 }
@@ -5,4 +7,32 @@ table {
 .mat-form-field {
   font-size: 14px;
   width: 100%;
+}
+
+.link {
+  font-size: $fs-16;
+  font-weight: $fw-semiBold;
+  color: $fontColor;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.mat-cell {
+  padding-block: 0.5rem;
+}
+
+.mat-column-description, .mat-column-title {
+  width: 250px;
+  max-width: 250px;
+}
+
+.table__actions {
+  @include flex(center, center, row);
+
+  button {
+    margin-inline: 0.5rem;
+  }
 }

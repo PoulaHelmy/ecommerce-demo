@@ -1,0 +1,38 @@
+.page__container {
+  height: calc(100vh - 180px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.main__p {
+  margin-bottom: 4px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 24px;
+  color: #404553;
+}
+
+.sub__p {
+  margin-bottom: 4px;
+  font-size: 1.16667rem;
+  color: #404553;
+}
+
+button {
+  margin-top: 20px;
+  width: 250px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(56, 102, 223);
+  border: 1px solid rgb(56, 102, 223);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}

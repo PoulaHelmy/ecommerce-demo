@@ -1,0 +1,15 @@
+<div class="header">
+  <h1 mat-dialog-title>{{ data!.title }}</h1>
+</div>
+<div *ngIf="data!.message !== '' && data!.message" class="body__content"
+     mat-dialog-content>
+  <p class="dialog-message">{{ data!.message }}</p>
+</div>
+<section class="actions__container" mat-dialog-actions>
+  <button (click)="confirm()" *ngIf="data?.confirmText && data?.confirmText !== ''" class="button raised__button_white">
+    {{ data!.confirmText }}
+  </button>
+  <button (click)="cancel()" *ngIf="data?.cancelText && data?.cancelText !== ''" class="button raised__button-special">
+    {{ data!.cancelText }}
+  </button>
+</section>

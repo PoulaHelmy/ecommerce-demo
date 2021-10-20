@@ -1,0 +1,15 @@
+@import "src/assets/styles/abstracts/variables";
+
+.loading {
+  @include flex(center, center, row, nowrap);
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.loading__logo {
+  width: 175px;
+  height: auto;
+}
+

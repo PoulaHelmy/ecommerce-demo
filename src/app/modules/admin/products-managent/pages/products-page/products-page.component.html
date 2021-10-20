@@ -1,12 +1,13 @@
+<app-loader *ngIf="loading"></app-loader>
 <div class="page__container container">
   <div class="row">
     <div class="col-12">
-      <div class="page__actions">
-
+      <div class="page__actions d-flex justify-content-end">
+        <button (click)="OpenDialog(false)" color="primary" mat-raised-button>Add New Product</button>
       </div>
     </div>
     <div class="col-12">
-      <div class="page__content">
+      <div class="page__content my-4">
         <div class="filter">
           <mat-form-field>
             <mat-label>Filter</mat-label>
@@ -28,7 +29,7 @@
 
 
 <ng-template #tableTemplate let-data='data'>
-  <div class="table__wrapper">
+  <div class="table__wrapper mat-elevation-z2">
     <table [dataSource]="data" mat-table matSort>
       <ng-container matColumnDef="id">
         <th *matHeaderCellDef mat-header-cell mat-sort-header>ID.</th>
@@ -37,13 +38,14 @@
       <ng-container matColumnDef="image">
         <th *matHeaderCellDef mat-header-cell>Image</th>
         <td *matCellDef="let row" mat-cell>
-          <img [lazyLoad]="row.image" alt="" height="100px" width="75px">
+          <img [alt]="row.description" [lazyLoad]="row.image" defaultImage="assets/images/default.jpg"
+               errorImage="assets/images/default.jpg" height="100px" width="75px">
         </td>
       </ng-container>
       <ng-container matColumnDef="category">
         <th *matHeaderCellDef mat-header-cell mat-sort-header>Category</th>
-        <td *matCellDef="let row" mat-cell><a
-          [routerLink]="['/admin/category-management'|localize]">{{row.category}}</a></td>
+        <td *matCellDef="let row" mat-cell>
+          <a [routerLink]="['/admin/category-management'|localize]" class="link">{{row.category}}</a></td>
       </ng-container>
       <ng-container matColumnDef="description">
         <th *matHeaderCellDef mat-header-cell mat-sort-header>Description</th>
@@ -52,7 +54,7 @@
       <ng-container matColumnDef="price">
         <th *matHeaderCellDef mat-header-cell mat-sort-header>Price</th>
         <td *matCellDef="let row" mat-cell>
-          {{ row.price }}
+          {{ row.price|currency:'EGY' }}
         </td>
       </ng-container>
       <ng-container matColumnDef="rates">
@@ -64,8 +66,14 @@
       <ng-container matColumnDef="actions">
         <th *matHeaderCellDef mat-header-cell mat-sort-header>Actions</th>
         <td *matCellDef="let row" mat-cell>
-          <button (click)="OpenDialog(true,row.id)" color="accent" mat-raised-button>edit</button>
-          <button (click)="DeleteItem(row.id)" color="warn" mat-raised-button>delete</button>
+          <div class="table__actions">
+            <button (click)="OpenDialog(true,row.id,row)" color="primary" mat-mini-fab>
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="DeleteItem(row)" color="warn" mat-mini-fab>
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </td>
       </ng-container>
       <ng-container matColumnDef="title">

@@ -8,7 +8,7 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 /* For use in src/lib/core/theming/_palette.scss */
-$md-primarycolors: (
+$md-seconderycolors: (
   50: #fffde0,
   100: #fffab3,
   200: #fff780,
@@ -42,7 +42,7 @@ $md-primarycolors: (
 );
 
 /* For use in src/lib/core/theming/_palette.scss */
-$md-seconderycolors: (
+$md-primarycolors: (
   50: #e7edfb,
   100: #c3d1f5,
   200: #9cb3ef,
@@ -121,13 +121,13 @@ $ecommerce-warn: mat.define-palette($md-thirdcolors);
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $ecommerce-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $ecommerce-primary,
-      accent: $ecommerce-accent,
-      warn: $ecommerce-warn,
-    ),
-  )
+    (
+      color: (
+        primary: $ecommerce-primary,
+        accent: $ecommerce-accent,
+        warn: $ecommerce-warn,
+      ),
+    )
 );
 
 // Include theme styles for core and each component used in your app.

@@ -1,19 +1,6 @@
 import {Routes} from '@angular/router';
+import {NotFoundComponent} from "@shared/components/not-found/not-found.component";
 
-export const AdminRoutes: Routes = [
-  {
-    path: 'admin/user-management',
-    loadChildren: () => import('./modules/admin/users-managent/users-management.module').then(m => m.UsersManagementModule)
-  },
-  {
-    path: 'admin/product-management',
-    loadChildren: () => import('./modules/admin/products-managent/products-management.module').then(m => m.ProductsManagementModule)
-  },
-  {
-    path: 'admin/category-management',
-    loadChildren: () => import('./modules/admin/category-managent/category-management.module').then(m => m.CategoryManagementModule)
-  },
-];
 
 export const routes: Routes = [
   {
@@ -27,27 +14,12 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules/products/products.module').then((m) => m.ProductsModule),
   },
-  ...AdminRoutes,
-  // {
-  //   path: 'dashboard',
-  //   // component: DashboardComponent,
-  //   canActivate: [IsAuthenticatedGuard],
-  // },
-  // {
-  //   path: 'products',
-  //   // component: ProductsComponent,
-  //   canActivate: [IsAuthenticatedGuard, HasRoleGuard],
-  //   data: {
-  //     role: 'Admin',
-  //   },
-  // },
-  // {
-  //   path: 'login',
-  //   // component: LoginComponent,
-  // },
-  // {
-  //   path: '',
-  //   pathMatch: 'full',
-  //   redirectTo: 'login',
-  // },
+  {
+    path: 'admin/product-management',
+    loadChildren: () => import('./modules/admin/products-managent/products-management.module').then(m => m.ProductsManagementModule)
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
 ];

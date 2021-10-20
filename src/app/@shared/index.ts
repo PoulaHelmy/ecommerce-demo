@@ -16,6 +16,11 @@ import {MaterialModule} from "@shared/material/material.module";
 import {LazyLoadImageModule} from "ng-lazyload-image";
 import {ContentLoaderModule} from "@ngneat/content-loader";
 import {ContentSkeletonComponent} from "@shared/components/content-skeleton/content-skeleton.component";
+import {AppLoaderComponent} from "@shared/components/app-loader/app-loader.component";
+import {DialogueComponent} from "@shared/components/confirm-dialog/dialogue.component";
+import {NotFoundComponent} from "@shared/components/not-found/not-found.component";
+import {RouterModule} from "@angular/router";
+import {CarouselModule} from "ngx-owl-carousel-o";
 
 /*----------------------   Imports   ----------------------*/
 export const imports: any[] = [
@@ -27,6 +32,8 @@ export const imports: any[] = [
   MaterialModule,
   LazyLoadImageModule,
   ContentLoaderModule,
+  RouterModule,
+  CarouselModule
 ];
 /*----------------------   PIPES   ----------------------*/
 export const pipes: any[] = [
@@ -47,6 +54,8 @@ export const directives: any[] = [
 ];
 /*----------------------   Components   ----------------------*/
 export const components: any[] = [
-  ContentSkeletonComponent
-
+  ContentSkeletonComponent,
+  AppLoaderComponent,
+  DialogueComponent,
+  NotFoundComponent
 ];

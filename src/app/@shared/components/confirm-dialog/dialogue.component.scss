@@ -1,0 +1,75 @@
+@import "src/assets/styles/abstracts/variables";
+
+.header {
+  h1 {
+    color: $secColor;
+    font-size: 1.5rem;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto 0.5rem auto;
+  }
+}
+
+.body__content {
+  margin: 0 auto;
+  text-align: center;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.actions__container {
+  padding-bottom: 1.5rem;
+}
+
+.button {
+  color: $secColor;
+  border-color: $secColor;
+  margin-top: .5em;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: $transition-200ms;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $secColor;
+    color: $color-white;
+  }
+}
+
+.raised__button_white {
+  color: $color-white;
+  background-color: $secColor;
+}
+
+.raised__button-special {
+  color: $secColor;
+  background-color: $color-white;
+}
+
+.session__content {
+  @include flex(center, space-between, row, wrap);
+  border: 1px dotted $color-gray-5;
+  border-radius: $rd-12;
+  padding: 0.5rem 0.6rem;
+  margin: 1rem auto;
+
+  @include media-breakpoint-down(md) {
+    @include flex(center, center, row, wrap);
+    a {
+      width: 100%;
+      text-align: center;
+      word-break: break-all;
+    }
+  }
+}
+
+.link {
+  transition: $transition-200ms;
+
+  &:hover {
+    color: $secDarkColor;
+  }
+}

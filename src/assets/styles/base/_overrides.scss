@@ -35,3 +35,81 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+
+.owl-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 3rem;
+
+
+}
+
+
+.owl-theme .owl-nav {
+  [class*=owl-] {
+    font-size: 32px;
+    color: black !important;
+    transition: all 0.4s;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+
+  [class=owl-prev] {
+    margin: 0 0.5rem;
+    padding: 0 12px 0 12px;
+
+    &:hover {
+      transform: translate(-5px);
+    }
+  }
+
+  [class=owl-next] {
+    margin: 0 0.5rem;
+    padding: 0 12px 0 12px;
+
+    &:hover {
+      transform: translate(5px);
+    }
+  }
+}
+
+.owl-carousel .owl-nav.disabled {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  bottom: 0;
+}
+
+@include media-breakpoint-down(sm) {
+  .owl-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    bottom: 0px;
+  }
+  [class=owl-prev] {
+    margin-top: 0.8rem;
+  }
+  [class=owl-next] {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .owl-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+  }
+}

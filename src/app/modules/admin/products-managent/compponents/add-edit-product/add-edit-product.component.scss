@@ -1,0 +1,22 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+::ng-deep {
+  .mat-dialog-container {
+    min-width: 50vw;
+  }
+
+  .mat-dialog-actions {
+    justify-content: space-between;
+  }
+}
+
+button {
+  position: relative;
+}
