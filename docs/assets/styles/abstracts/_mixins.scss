@@ -1,0 +1,50 @@
+@mixin flex($align:center, $justify:center, $flow:row,$wrap:nowrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-flow: $flow;
+  flex-wrap: $wrap;
+}
+
+
+// border radius
+
+@mixin border-radius($radius: 0.25em) {
+  border-radius: $radius;
+}
+
+// antialiasing mode font rendering
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// typical properties for text overflow with ellipsis
+@mixin text-overflow() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// centering with translate
+@mixin center-left() {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@mixin center-top() {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin center-all() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

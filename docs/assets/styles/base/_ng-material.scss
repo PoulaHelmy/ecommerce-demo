@@ -1,0 +1,166 @@
+@import "../abstracts/variables";
+
+
+input.mat-input-element {
+  color: $secColor !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: $secColor !important;
+}
+
+.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+  border-color: rgba(0, 0, 0, 0.38) !important;
+}
+
+.mat-hint {
+  color: $color-red !important;
+}
+
+.mat-error {
+  color: $color-red !important;
+}
+
+.mat-icon.mat-accent {
+  color: $selectedColor !important;
+}
+
+.mat-icon.mat-primary {
+  color: $selectedColor !important;
+}
+
+.mat-drawer-content {
+  background-color: $color-gray-1;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.mat-drawer-inner-container {
+  background: $color-white;
+  width: 175px !important;
+}
+
+.mat-tab-header-pagination-chevron {
+  border-color: $secDarkColor !important;
+}
+
+
+//mat-input focused color
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $selectedColor !important;
+}
+
+// mat-input error outline color
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: $color-red !important;
+  opacity: 0.8 !important;
+}
+
+// mat-input carent color
+.mat-input-element {
+  caret-color: $secColor !important;
+}
+
+// mat-input error carent color
+.mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
+  caret-color: $secColor !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background: none !important;
+}
+
+//mat-input focused color
+.mat-form-field-appearance-fill.mat-focused .mat-form-field-fill-thick {
+  color: $secColor !important;
+}
+
+
+.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-datepicker-toggle-default-icon, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-datepicker-toggle-default-icon {
+  fill: #9B9B9B !important;
+}
+
+/*---------ANGULAR MATERIAL Select Options---------*/
+
+.mat-select-value {
+  color: $secColor !important;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: $secColor !important;
+}
+
+/*** To change the arrow color ****/
+.mat-select-arrow {
+  border-top: 5px solid #9B9B9B !important;
+  color: #9B9B9B !important;
+}
+
+
+// mat-input error outline color
+.mat-form-field-appearance-fill.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-fill-thick {
+  color: $color-red !important;
+  opacity: 0.8 !important;
+}
+
+.mat-form-field-appearance-fill {
+  .mat-form-field-ripple {
+    background: $secColor !important;
+  }
+}
+
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $secColor !important;
+}
+
+.mat-select-value-text {
+  color: $secColor !important;
+
+}
+
+.mat-input-element {
+  color: $secColor !important;
+}
+
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px !important;
+}
+
+
+/*---------------Mat Dialogue ----------------------*/
+.mat-dialog-container {
+  border-radius: $rd-16 !important;
+}
+
+
+// to make checkbox responsive
+// adds breaks to the mat-checkboxes with long labels
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+// rather than center the checkbox, put the checkbox in the first line
+.mat-checkbox-inner-container {
+  margin-top: 3px !important;
+}
+
+mat-datepicker-toggle {
+  color: $secColor !important;
+}
+
+
+button.mat-focus-indicator.mat-calendar-next-button.mat-icon-button.mat-button-base,
+button.mat-focus-indicator.mat-calendar-previous-button.mat-icon-button.mat-button-base {
+  color: $secColor !important;
+}
+
+.mat-calendar-body-selected {
+  color: $color-white !important;
+}
+
+.mat-badge-content {
+  color: $color-white !important;
+}
+

@@ -1,0 +1,14 @@
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/_helper-classes.scss";
+
+@import "base/reset";
+@import "base/ng-material";
+@import "base/animation";
+@import "base/placeholders";
+@import "base/overrides";
+
+@import "themes/ecommerce-theme";

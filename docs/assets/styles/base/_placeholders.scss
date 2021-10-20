@@ -1,0 +1,41 @@
+@import "../abstracts/variables";
+
+%paragraph-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+%paragraph-6-lines {
+  @extend %paragraph-lines;
+  -webkit-line-clamp: 6;
+}
+
+%paragraph-5-lines {
+  @extend %paragraph-lines;
+  -webkit-line-clamp: 5;
+}
+
+%paragraph-3-lines {
+  @extend %paragraph-lines;
+  -webkit-line-clamp: 3;
+  color: $fontColor;
+}
+
+%paragraph-2-lines {
+  @extend %paragraph-lines;
+  -webkit-line-clamp: 2;
+  color: $fontColor;
+}
+
+%small__hint {
+  font-size: $fs-14;
+  margin-left: 16px;
+  opacity: 0.7;
+  color: $primaryColor;
+}
+
+%hoverEffect {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: $rd-12;
+}

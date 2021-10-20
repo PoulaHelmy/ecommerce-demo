@@ -1,0 +1,24 @@
+{
+  "DIR": "rtl",
+  "HOMEPAGE": "الصفحة الرئيسية",
+  "FEATURE": "ميزة",
+  "HOMEPAGE_WORKS": "الصفحة الرئيسية تشتغل",
+  "FEATURE_WORKS": "الميزة تشتغل",
+  "CHANGE_LANGUAGE": "غير اللغة",
+  "header": {
+    "cart": "عربة التسوق",
+    "sign_in": "تسجيل الدخول",
+    "search__placeholder": "ما الذى تبحث عنه؟"
+  },
+  "login_title": "مرحبا بك!",
+  "login_desc": "قم بتسجيل الدخول إلى حسابك",
+  "logout": "تسجيل خروج",
+  "products": "المنتجات",
+  "form": {
+    "username__label": "قم إدخال اسم المستخدم",
+    "username__required": "اسم المستخدم مطلوب",
+    "password_label": "قم إدخال كلمة المرور",
+    "password_required": "كلمة المرور مطلوبة",
+    "login": "تسجيل الدخول"
+  }
+}
