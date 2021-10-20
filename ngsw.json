@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1634728544964,
+  "timestamp": 1634729100376,
   "index": "https://poulahelmy.github.io/ecommerce-demo/index.html",
   "assetGroups": [
     {
@@ -133,7 +133,7 @@
     "https://poulahelmy.github.io/ecommerce-demo/bootstrap.rtl.min.css": "a100a0b4a024b878f89afda92ffd848f0f4d308d",
     "https://poulahelmy.github.io/ecommerce-demo/common.31e3272b4f1c90a1bd06.js": "920f6932492702ad48c9f77649551dda743499c0",
     "https://poulahelmy.github.io/ecommerce-demo/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://poulahelmy.github.io/ecommerce-demo/index.html": "87a58b42b8cb77e5cb65de1dbc660a80f995f0a8",
+    "https://poulahelmy.github.io/ecommerce-demo/index.html": "5250a56510dd3e45e0c7f64881b4369f820f39b3",
     "https://poulahelmy.github.io/ecommerce-demo/main.eddd12969e0f43cdcbee.js": "23ec396273f441628c464457c7f4827c47cf924d",
     "https://poulahelmy.github.io/ecommerce-demo/manifest.webmanifest": "61e3a5db2928d73f3a574543add80114636d67af",
     "https://poulahelmy.github.io/ecommerce-demo/polyfills.0ee6646aa4a7feebc977.js": "bec098962c750bf36d1ca8e0a8b891f41b8a3ed7",
