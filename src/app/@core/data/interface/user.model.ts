@@ -1,3 +1,9 @@
+export interface SimpleUser {
+  username: string;
+  password: string;
+  role: "USER" | "ADMIN";
+}
+
 export interface UserModel {
   username: string;
   firstName: string;

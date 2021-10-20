@@ -1,0 +1,58 @@
+@import "src/assets/styles/abstracts/mixins";
+
+
+%nav-item {
+  background: var(--white-color);
+  color: var(--primary-color);
+}
+
+.main-wrapper {
+  position: relative;
+  background: var(--background-color);
+
+  .main-content {
+    min-height: calc(100vh - var(--header-height));
+  }
+}
+
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.nav__elements {
+  @include flex(center, space-between, column);
+  padding: 0;
+  list-style-type: none;
+
+  .nav__element {
+    .nav__item {
+      margin: 0.8rem;
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: var(--fs-16);
+      font-weight: 700;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      color: #000;
+      margin-inline-end: 0.2rem;
+      transition: all 0.2s ease-in-out;
+
+      &.active {
+        @extend %nav-item;
+      }
+
+      &:hover {
+        @extend %nav-item;
+      }
+    }
+  }
+}

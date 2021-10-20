@@ -1,8 +1,5 @@
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-import {CardHoverDirective} from './directives/Attributes-Direstives/card-hover.directive';
 import {CommonModule} from '@angular/common';
-import {GuestDirective} from './directives/Structural-Directives/guest.directive';
 import {HtmlPipe} from './pipes/html.pipe';
 import {ImgDefaultPipe} from './pipes/img-default.pipe';
 import {LocalizeRouterModule} from '@gilsdav/ngx-translate-router';
@@ -21,6 +18,8 @@ import {DialogueComponent} from "@shared/components/confirm-dialog/dialogue.comp
 import {NotFoundComponent} from "@shared/components/not-found/not-found.component";
 import {RouterModule} from "@angular/router";
 import {CarouselModule} from "ngx-owl-carousel-o";
+import {RoleDirective} from "@shared/directives/Structural-Directives/role.directive";
+import {NotRoleDirective} from "@shared/directives/Structural-Directives/not-role.directive";
 
 /*----------------------   Imports   ----------------------*/
 export const imports: any[] = [
@@ -47,10 +46,9 @@ export const pipes: any[] = [
 ];
 /*----------------------   Directives   ----------------------*/
 export const directives: any[] = [
-  CardHoverDirective,
   ShowAuthedDirective,
-  GuestDirective,
-  ShowAuthedDirective,
+  RoleDirective,
+  NotRoleDirective
 ];
 /*----------------------   Components   ----------------------*/
 export const components: any[] = [

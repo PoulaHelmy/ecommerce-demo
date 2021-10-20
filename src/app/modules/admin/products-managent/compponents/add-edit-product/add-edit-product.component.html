@@ -60,10 +60,12 @@
     </div>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button (click)="onSubmit()" [class.spinner]="loading" [disabled]="ItemForm.untouched || ItemForm.invalid || loading"
-            [ngStyle]="{'cursor':ItemForm.untouched || ItemForm.invalid || loading ? 'not-allowed':'pointer'}"
-            color="primary"
-            mat-button
+    <button
+      (click)="onSubmit()"
+      [class.spinner]="loading" [disabled]="ItemForm.untouched || ItemForm.invalid || loading"
+      [ngStyle]="{'cursor':ItemForm.untouched || ItemForm.invalid || loading ? 'not-allowed':'pointer'}"
+      color="primary"
+      mat-button
     >
       <mat-icon>save</mat-icon>
       Save

@@ -1,7 +1,7 @@
 <div class="main-wrapper">
   <app-main-header (toggleSidenav)="sideBar.toggle()">
   </app-main-header>
-  <app-categories-header></app-categories-header>
+  <app-categories-header *appNotRole="'ADMIN'"></app-categories-header>
   <mat-sidenav-container
     class="example-sidenav-container">
     <mat-sidenav #sideBar
@@ -9,26 +9,7 @@
                  fixedTopGap="64"
                  mode="over">
       <ul class="nav__elements">
-        <li class="nav__element">
-          <a [routerLinkActiveOptions]="{exact:true}" [routerLink]="'/' | localize"
-             routerLinkActive="active">{{ "home" | translate }}</a>
-        </li>
-        <li class="nav__element">
-          <a [routerLink]="'/about' | localize" class="nav__item"
-             routerLinkActive="active">{{ "about" | translate }}</a>
-        </li>
-        <li class="nav__element">
-          <a [routerLink]="'/contact-us' | localize" class="nav__item"
-             routerLinkActive="active">{{ "contact" | translate }}</a>
-        </li>
-        <li class="nav__element">
-          <a [routerLink]="'/developer/123' | localize" class="nav__item"
-             routerLinkActive="active">{{ "developers" | translate }}</a>
-        </li>
-        <li class="nav__element">
-          <a [routerLink]="'/about-us' | localize" class="nav__item"
-             routerLinkActive="active">{{ "aboutUS" | translate }}</a>
-        </li>
+   
       </ul>
     </mat-sidenav>
     <mat-sidenav-content>

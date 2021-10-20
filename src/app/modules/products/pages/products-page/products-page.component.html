@@ -1,4 +1,4 @@
-<div class="page__container">
+<div class="page__container main__content">
   <div class="row">
     <div class="col-12 col-md-3">
       <div class="filter__card">
@@ -24,6 +24,7 @@
                   [vertical]="vertical"
                   aria-labelledby="example-name-label"
                   class="example-margin"
+                  color="primary"
                   formControlName="price">
                 </mat-slider>
               </section>
@@ -40,6 +41,7 @@
                   [vertical]="vertical"
                   aria-labelledby="example-name-label"
                   class="example-margin"
+                  color="primary"
                   formControlName="rate">
                 </mat-slider>
               </section>
@@ -62,7 +64,6 @@
               </section>
             </div>
             <div class="group__container">
-              <button class="button" type="submit">بحث</button>
               <button (click)="ResetForm()" class="reset__button" type="button">مسح البحث</button>
             </div>
           </form>

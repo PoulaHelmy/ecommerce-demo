@@ -17,10 +17,10 @@
         <div class="col-12">
           <div class="input__wrapper">
             <mat-form-field appearance="fill" class="w-100">
-              <mat-label>{{'form.email_label'|translate}}</mat-label>
-              <input formControlName="email" matInput placeholder="pat@example.com" required>
+              <mat-label>{{'form.username_label'|translate}}</mat-label>
+              <input formControlName="username" matInput placeholder="username" required>
               <mat-error
-                *ngIf="loginForm.controls.email.errors?.required &&loginForm.controls.email.touched">{{'form.email_required'|translate}}</mat-error>
+                *ngIf="loginForm.controls.username.errors?.required &&loginForm.controls.username.touched">{{'form.username_required'|translate}}</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -45,6 +45,9 @@
     </form>
   </div>
   <div class="footer">
-    <button (click)="onSubmit()" class="submit__btn">{{'form.login'|translate}}</button>
+    <button (click)="onSubmit()"
+            [class.spinner]="loading" [disabled]="loginForm.untouched || loginForm.invalid || loading"
+            [ngStyle]="{'cursor':loginForm.untouched || loginForm.invalid || loading ? 'not-allowed':'pointer'}"
+            class="submit__btn">{{'form.login'|translate}}</button>
   </div>
 </div>

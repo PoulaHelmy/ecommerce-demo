@@ -1,5 +1,9 @@
 @import "src/assets/styles/abstracts/variables";
 
+.main__content {
+  min-height: calc(100vh - 145px);
+}
+
 :host::ng-deep {
   .mat-form-field-flex > .mat-form-field-infix {
     padding: 0 0 !important;
@@ -85,7 +89,7 @@
 }
 
 .card__body {
-  padding: 0 1em 1em;
+  padding: 1rem;
 }
 
 .button {

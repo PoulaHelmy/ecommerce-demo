@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ProductsService} from "@core/http/services/products.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {Observable} from "rxjs";
-import {startWith} from "rxjs/operators";
+import {Observable, of} from "rxjs";
+import {delay, startWith} from "rxjs/operators";
 import {DatePipe} from "@angular/common";
 import {BindQueryParamsFactory} from "@ngneat/bind-query-params";
 import {ProductModel} from "@core/data/interface/product.model";
@@ -100,41 +100,43 @@ export class ProductsPageComponent implements OnInit, OnDestroy {
 
   LoadData(): void {
     this.loading = true;
-    if (this.filterForm.controls.title.value && this.filterForm.controls.title.value?.length >= 3) {
-      this.AllProducts = this.AllProducts.filter((product) => {
-        return product.title.toLowerCase().includes(this.filterForm.controls.title.value);
-      })
-    }
-    if (this.filterForm.controls.price.value && this.filterForm.controls.price.value > 0) {
-      this.AllProducts = this.AllProducts.filter((product) => {
-        return product.price <= parseInt(this.filterForm.controls.price.value, 10);
-      })
-    }
-    if (this.filterForm.controls.rate.value && this.filterForm.controls.rate.value > 0) {
-      this.AllProducts = this.AllProducts.filter((product) => {
-        return Math.round(product.rating.rate) <= parseInt(this.filterForm.controls.rate.value, 10);
-      })
-    }
-    if (this.filterForm.controls.men__clothing.value && this.filterForm.controls.men__clothing.value === 'true') {
-      this.AllProducts = this.AllProducts.filter((product) => {
-        return product.category === 'men\'s clothing';
-      })
-    }
-    if (this.filterForm.controls.women__clothing.value && this.filterForm.controls.women__clothing.value === 'true') {
-      this.AllProducts = this.AllProducts.filter((product) => {
-        return product.category === 'women\'s clothing';
-      })
-    }
-    if (this.filterForm.controls.electronics.value && this.filterForm.controls.electronics.value === 'true') {
-      this.AllProducts = this.AllProducts.filter((product) => {
-        return product.category === 'electronics';
-      })
-    }
-    if (this.filterForm.controls.jewelery.value && this.filterForm.controls.jewelery.value === 'true') {
-      this.AllProducts = this.AllProducts.filter((product) => {
-        return product.category === 'jewelery';
-      })
-    }
-    this.loading = false;
+    of(this.filterForm.value).pipe(delay(3000)).subscribe((res) => {
+      if (this.filterForm.controls.title.value && this.filterForm.controls.title.value?.length >= 3) {
+        this.AllProducts = this.AllProducts.filter((product) => {
+          return product.title.toLowerCase().includes(this.filterForm.controls.title.value);
+        })
+      }
+      if (this.filterForm.controls.price.value && this.filterForm.controls.price.value > 0) {
+        this.AllProducts = this.AllProducts.filter((product) => {
+          return product.price <= parseInt(this.filterForm.controls.price.value, 10);
+        })
+      }
+      if (this.filterForm.controls.rate.value && this.filterForm.controls.rate.value > 0) {
+        this.AllProducts = this.AllProducts.filter((product) => {
+          return Math.round(product.rating.rate) <= parseInt(this.filterForm.controls.rate.value, 10);
+        })
+      }
+      if (this.filterForm.controls.men__clothing.value && this.filterForm.controls.men__clothing.value === 'true') {
+        this.AllProducts = this.AllProducts.filter((product) => {
+          return product.category === 'men\'s clothing';
+        })
+      }
+      if (this.filterForm.controls.women__clothing.value && this.filterForm.controls.women__clothing.value === 'true') {
+        this.AllProducts = this.AllProducts.filter((product) => {
+          return product.category === 'women\'s clothing';
+        })
+      }
+      if (this.filterForm.controls.electronics.value && this.filterForm.controls.electronics.value === 'true') {
+        this.AllProducts = this.AllProducts.filter((product) => {
+          return product.category === 'electronics';
+        })
+      }
+      if (this.filterForm.controls.jewelery.value && this.filterForm.controls.jewelery.value === 'true') {
+        this.AllProducts = this.AllProducts.filter((product) => {
+          return product.category === 'jewelery';
+        })
+      }
+      this.loading = false;
+    })
   }
 }

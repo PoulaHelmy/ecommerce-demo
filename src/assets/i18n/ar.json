@@ -12,9 +12,11 @@
   },
   "login_title": "مرحبا بك!",
   "login_desc": "قم بتسجيل الدخول إلى حسابك",
+  "logout": "تسجيل خروج",
+  "products": "المنتجات",
   "form": {
-    "email_label": "قم إدخال البريد الاكتروني",
-    "email_required": "البريد الاكتروني مطلوب",
+    "username__label": "قم إدخال اسم المستخدم",
+    "username__required": "اسم المستخدم مطلوب",
     "password_label": "قم إدخال كلمة المرور",
     "password_required": "كلمة المرور مطلوبة",
     "login": "تسجيل الدخول"

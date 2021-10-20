@@ -5,6 +5,7 @@ import {DOCUMENT} from "@angular/common";
 import {MatDialog} from "@angular/material/dialog";
 import {LocalizeRouterService} from "@gilsdav/ngx-translate-router";
 import {LoginPopupComponent} from "@core/@components/login-popup/login-popup.component";
+import {AuthService} from "@core/http/services/auth.service";
 
 @Component({
   selector: 'app-main-header',
@@ -25,6 +26,7 @@ export class MainHeaderComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document,
     private route: Router,
     private localizeRouterService: LocalizeRouterService,
+    private userService: AuthService
   ) {
   }
 
@@ -84,7 +86,7 @@ export class MainHeaderComponent implements OnInit {
   }
 
   logOut(): void {
-
+    this.userService.logout();
   }
 
   toggleSideBar(): void {

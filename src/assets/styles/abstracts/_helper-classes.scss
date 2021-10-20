@@ -108,54 +108,6 @@
   width: 90%;
 }
 
-/*------------------------Buttons------------------------------*/
-.button {
-  position: relative;
-  border-radius: $rd-6;
-  color: $primaryColor;
-  padding: 0.4rem 0.6rem;
-  background: $color-white;
-  border: 2px $color-white solid;
-  font-size: $fs-14;
-  // font-family: 'janna-regular', sans-serif;
-
-  &:hover {
-    color: $primaryColor;
-  }
-
-  &.raised__button {
-    background: $color-white;
-    color: $primaryColor;
-    border: 2px $color-white solid;
-  }
-
-  &.raised__primary__button {
-    background: $primaryColor;
-    color: $color-white;
-    border: 2px $primaryColor solid;
-  }
-
-  &.outlined__button {
-    background: transparent;
-    color: $color-white;
-    border: 2px $color-white solid;
-  }
-
-  &.outlined__primary__button {
-    background: $primaryColor;
-    color: $primaryColor;
-    border: 2px $primaryColor solid;
-  }
-}
-
-.table__box__shadow {
-  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%) inset;
-}
-
-.table__box__shadow-p {
-  padding: 0.5rem;
-  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%) inset;
-}
 
 .fxFill {
   margin: 0;

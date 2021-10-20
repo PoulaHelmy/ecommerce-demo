@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   AllProducts: ProductModel[] = [];
   loading = true;
   customOptions: OwlOptions = {
+    rtl: true,
     loop: true,
     mouseDrag: true,
     touchDrag: true,

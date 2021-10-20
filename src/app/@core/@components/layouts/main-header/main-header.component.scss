@@ -21,6 +21,10 @@
 
 .search__header {
   margin-inline: 0.6rem;
+  display: block;
+  @media screen and (max-width: 950px) {
+    display: none;
+  }
 
   .search__content {
     flex: 1 1 0;

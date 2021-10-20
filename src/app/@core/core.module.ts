@@ -24,7 +24,8 @@ import {LoginPopupComponent} from './@components/login-popup/login-popup.compone
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MaterialModule} from "@shared/material/material.module";
 import {ReactiveFormsModule} from "@angular/forms";
-import { CategoriesHeaderComponent } from './@components/categories-header/categories-header.component';
+import {CategoriesHeaderComponent} from './@components/categories-header/categories-header.component';
+import {SharedModule} from "@shared/shared.module";
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { CategoriesHeaderComponent } from './@components/categories-header/categ
     MatFormFieldModule,
     MaterialModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   exports: [
     MainLayoutComponent

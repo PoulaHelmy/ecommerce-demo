@@ -8,7 +8,7 @@ import {tap} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class IsAuthenticatedGuard implements CanActivate {
+export class GustGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {
   }
 
@@ -18,7 +18,12 @@ export class IsAuthenticatedGuard implements CanActivate {
   ): Observable<boolean> {
     return this.authService.isLoggedIn$.pipe(
       tap((isLoggedIn) => {
-        return isLoggedIn;
+        if (isLoggedIn) {
+          console.log('fffffffffffff ', isLoggedIn);
+          return !isLoggedIn;
+        } else {
+          return true;
+        }
       })
     );
   }

@@ -12,9 +12,11 @@
   },
   "login_title": "Welcome back!",
   "login_desc": "Sign in to your account",
+  "logout": "Logout",
+  "products": "Products",
   "form": {
-    "email_label": "Enter your email",
-    "email_required": "Email is Required",
+    "username__label": "Enter your username",
+    "username_required": "Username is Required",
     "password_label": "Enter your password",
     "password_required": "Password is Required",
     "login": "Login"
