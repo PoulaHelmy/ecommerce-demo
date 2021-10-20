@@ -33,26 +33,6 @@
     transform: translateY(0) scale(.75);
     width: 133.33333%;
   }
-
-
-}
-
-.all__teachers__container {
-  margin: 1rem auto;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-.global {
-  @include flex(flex-start, space-between, row, wrap);
-}
-
-.right__side {
-  width: 23%
-}
-
-.left__side {
-  width: 74%
 }
 
 .filter__card {
@@ -71,45 +51,11 @@
   }
 }
 
-.card__header, .group__title, .group__content {
-  font-size: $fs-14;
-  color: $color-gray-5;
-}
-
-.card__header {
-  text-align: right;
-  padding: 1em;
-  margin: .5rem 0;
-}
-
-.divider {
-  width: 100%;
-  height: 2px;
-  background-color: $color-gray-1;
-}
 
 .card__body {
   padding: 1rem;
 }
 
-.button {
-  color: $secColor;
-  border-color: $secColor;
-  width: 100%;
-  margin-top: 1em;
-  transition: $transition-200ms;
-
-  &:hover {
-    background-color: rgba(10, 68, 38, 0.2)
-  }
-
-  &.btn__disabled {
-    background: $color-white;
-    border-color: $color-gray-2;
-    color: $color-gray-2;
-    cursor: not-allowed;
-  }
-}
 
 .reset__button {
   color: $secColor;
@@ -124,70 +70,4 @@
   }
 }
 
-.single__teacher {
-  height: 100%;
-  padding-bottom: 1.2em !important;
-}
-
-.group__container {
-  @include flex(flex-start, flex-start, column, nowrap);
-  margin: 1rem auto;
-
-  .group__body {
-    width: 100%;
-    @include flex(flex-start, flex-start, column, nowrap);
-  }
-}
-
-.pagination__buttons {
-  text-align: center !important;
-  padding: 2rem;
-  direction: ltr;
-
-  .btn-disabled {
-    border-color: rgba(0, 0, 0, 0.12);
-  }
-
-  button {
-    border-radius: 0;
-    padding: 0.4rem;
-    width: 45%;
-  }
-
-  .prev__btn {
-    border-right: transparent;
-    border-top-left-radius: $rd-12;
-    border-bottom-left-radius: $rd-12;
-  }
-
-  .next__btn {
-    border-left: transparent;
-    border-top-right-radius: $rd-12;
-    border-bottom-right-radius: $rd-12;
-  }
-}
-
-@include media-breakpoint-only(lg) {
-  .right__side {
-    width: 30%
-  }
-  .left__side {
-    width: 67%
-  }
-}
-
-@include media-breakpoint-only(md) {
-  .right__side {
-    width: 35%
-  }
-  .left__side {
-    width: 62%
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .right__side, .left__side {
-    width: 100%
-  }
-}
 

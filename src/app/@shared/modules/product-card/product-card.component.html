@@ -25,8 +25,13 @@
 
     </div>
     <div class="overlay__body">
-      <button (click)="login()" *appShowAuthed="false">Add to Cart</button>
-      <button (click)="addToCart()" *appShowAuthed="true">Add to Cart</button>
+      <div *ngIf="!isInCart">
+        <button (click)="login()" *appShowAuthed="false">Add to Cart</button>
+        <button (click)="addToCart()" *appShowAuthed="true">Add to Cart</button>
+      </div>
+      <div *ngIf="isInCart">
+        <button (click)="removeFromCart()" *appShowAuthed="true">Remove From Cart</button>
+      </div>
       <button (click)="openPopup()">Show Details</button>
     </div>
   </div>

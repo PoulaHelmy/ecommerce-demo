@@ -113,3 +113,9 @@
   }
 }
 
+::ng-deep {
+  .mat-badge-accent .mat-badge-content {
+    background: $secColor;
+    color: $primaryColor;
+  }
+}

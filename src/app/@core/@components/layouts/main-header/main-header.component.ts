@@ -1,11 +1,11 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
-import {fromEvent} from "rxjs";
-import {NavigationEnd, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {DOCUMENT} from "@angular/common";
 import {MatDialog} from "@angular/material/dialog";
 import {LocalizeRouterService} from "@gilsdav/ngx-translate-router";
 import {AuthService} from "@core/http/services/auth.service";
 import {LoginPopupComponent} from "@shared/components/login-popup/login-popup.component";
+import {UserCartService} from "@core/http/services/user-cart.service";
 
 @Component({
   selector: 'app-main-header',
@@ -18,30 +18,27 @@ export class MainHeaderComponent implements OnInit {
   locales = this.localizeRouterService.parser.locales;
   currentUrl = "";
   lang = {key: "en", value: "english"};
-  hideHeader = false;
-  activeURL = this.route.url;
+  cartProducts = 0;
 
   constructor(
     private dialog: MatDialog,
     @Inject(DOCUMENT) private document: Document,
     private route: Router,
     private localizeRouterService: LocalizeRouterService,
-    private userService: AuthService
+    private userService: AuthService,
+    private userCartService: UserCartService,
   ) {
   }
 
   ngOnInit(): void {
     this.setCurrentUrl();
     this.setLanguage();
-    this.CheckIfInHomePage();
-    this.setHeaderStyle();
-
+    this.userCartService.LoadProducts();
+    this.userCartService.cardItems$.subscribe((res) => {
+      this.cartProducts = res.length;
+    })
     this.localizeRouterService.hooks.initialized.subscribe((eventScroll) => {
       this.route.events.subscribe((event) => {
-        if (event instanceof NavigationEnd) {
-          this.activeURL = event.urlAfterRedirects;
-          this.CheckIfInHomePage();
-        }
         this.setCurrentUrl();
         this.setLanguage();
       });
@@ -53,31 +50,6 @@ export class MainHeaderComponent implements OnInit {
       this.lang = {key: "ar", value: "العربية"};
     } else {
       this.lang = {key: "en", value: "english"};
-    }
-  }
-
-  setHeaderStyle(): void {
-    fromEvent(document, "scroll").subscribe((res) => {
-      this.CheckIfInHomePage();
-    });
-  }
-
-  CheckIfInHomePage(): void {
-    const url = this.activeURL;
-    if (url == "/ar" || url == "/en") {
-      if (window.scrollY >= 699) {
-        this.hideHeader = false;
-        // this.headerState = HeaderState.Solid;
-      }
-      if (window.scrollY < 699) {
-        this.hideHeader = true;
-      }
-    }
-    // Else
-    else {
-      if (window.scrollY > 10) {
-      } else {
-      }
     }
   }
 

@@ -25,11 +25,13 @@
         <button class="button" mat-dialog-close>close</button>
       </div>
       <div class="right">
-        <div *appShowAuthed="false">
-          <button (click)="login()" class="button raised__button-special">Add to Cart</button>
+        <div *ngIf="!data.isInCart">
+          <button (click)="addToCart()" *appShowAuthed="true" class="button raised__button-special">Add to Cart</button>
+          <button (click)="login()" *appShowAuthed="false" class="button raised__button-special">Add to Cart</button>
         </div>
-        <div *appShowAuthed="true">
-          <button (click)="addToCart()" class="button raised__button-special">Add to Cart</button>
+        <div *ngIf="data.isInCart">
+          <button (click)="removeFromCart()" *appShowAuthed="true" class="button raised__button-red ">Remove From Cart
+          </button>
         </div>
       </div>
     </div>

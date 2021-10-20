@@ -58,7 +58,8 @@ export class ProductsPageComponent implements OnInit, OnDestroy {
   maxRate = 5;
   minRate = 1;
 
-  constructor(private http: HttpClient, private productsService: ProductsService,
+  constructor(private http: HttpClient,
+              private productsService: ProductsService,
               private fb: FormBuilder,
               public datePipe: DatePipe,
               private factory: BindQueryParamsFactory) {

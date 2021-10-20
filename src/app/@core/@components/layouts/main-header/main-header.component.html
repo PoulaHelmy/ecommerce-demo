@@ -31,9 +31,11 @@
       <li class="li__divider"></li>
       <li class="action__buttons">
         <a *appRole="'USER'" [routerLink]="['/user-products'|localize]" class="action__btn">
+          <!--          cartProducts$-->
           <span>{{'header.cart'|translate}}</span>
           <img [class.translate__images]="currentUrl === 'ar'" alt="shopping cart"
                src="https://z.nooncdn.com/s/app/com/noon/icons/cart.svg">
+          <span *ngIf="cartProducts >0" [matBadge]="cartProducts" matBadgeColor="accent" matBadgeOverlap="false"></span>
         </a>
         <a *appRole="'ADMIN'" [routerLink]="['/admin/product-management' | localize]" class="action__btn">
           {{'products'|translate}}

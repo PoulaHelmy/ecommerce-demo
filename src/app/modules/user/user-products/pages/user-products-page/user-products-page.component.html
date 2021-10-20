@@ -1,1 +1,30 @@
-<p>user-products-page works!</p>
+<div class="main__content">
+  <div class="container page__container">
+    <div class="col-12">
+      <div class="products__container">
+        <div *ngIf="loading" class="row">
+          <ng-container *ngFor="let product of [0,1,2,3,4,5,6,7,8,9,10,11]">
+            <div class="col-12 col-md-3">
+              <app-content-skeleton [type]="'product'"></app-content-skeleton>
+            </div>
+          </ng-container>
+        </div>
+        <div *ngIf="!loading && AllProducts.length > 0;else noData" class="row">
+          <ng-container *ngFor="let product of AllProducts">
+            <div class="col-12 col-md-3 my-3">
+              <app-product-card [isInCart]="true" [product]="product"></app-product-card>
+            </div>
+          </ng-container>
+        </div>
+        <ng-template #noData>
+          <div class="nodata">
+            <img alt="" src="https://z.nooncdn.com/s/app/com/noon/images/empty-state-cart.svg">
+            <p class="main__p">Your shopping cart looks empty</p>
+            <p class="sub__p">What are you waiting for?</p>
+            <button [routerLink]="['/'|localize]" aria-label="Back To Homepage" type="button">Start Shopping</button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
