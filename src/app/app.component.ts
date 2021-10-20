@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 import {TranslateService} from "@ngx-translate/core";
+import {SwUpdate} from "@angular/service-worker";
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,17 @@ export class AppComponent {
 
   constructor(
     private translateService: TranslateService,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private swUpdate: SwUpdate,
   ) {
-    this.translateService.stream('DIR').subscribe(dir => {
-      this.directionChanged(dir);
-    });
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe((event) => {
+        location.reload();
+      });
+      this.translateService.stream('DIR').subscribe(dir => {
+        this.directionChanged(dir);
+      });
+    }
   }
 
 
