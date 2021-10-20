@@ -1,0 +1,24 @@
+{
+  "DIR": "ltr",
+  "HOMEPAGE_WORKS": "homepage works",
+  "FEATURE_WORKS": "feature works",
+  "HOMEPAGE": "homepage",
+  "FEATURE": "feature",
+  "CHANGE_LANGUAGE": "change language",
+  "header": {
+    "cart": "Cart",
+    "sign_in": "Sign In",
+    "search__placeholder": "What are you looking for?"
+  },
+  "login_title": "Welcome back!",
+  "login_desc": "Sign in to your account",
+  "logout": "Logout",
+  "products": "Products",
+  "form": {
+    "username__label": "Enter your username",
+    "username_required": "Username is Required",
+    "password_label": "Enter your password",
+    "password_required": "Password is Required",
+    "login": "Login"
+  }
+}
